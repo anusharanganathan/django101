@@ -15,5 +15,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^brand/index\.htm', 'coffeeshop.views.index'),
-    url(r'^brand/inducks\.htm', 'coffeeshop.views.inducks')
+    url(r'^brand/inducks\.htm', 'coffeeshop.views.inducks'),
+    url(r'^saturday/', 'weekend.views.general'), #anything following saturday
 )
