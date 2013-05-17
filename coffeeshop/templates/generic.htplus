@@ -15,5 +15,13 @@
 <li>{{t}}</li>
 {% endfor %}
 </ul>
+
+<h2>Activities</h2>
+<ul>
+{% for act in acts %}
+<li>{{act}}</li>
+{% endfor %}
+</ul>
+
 </body>
 </html>

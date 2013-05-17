@@ -7,3 +7,6 @@ class Activity(models.Model):
     duration = models.IntegerField()
     description = models.TextField()
 
+    def __unicode__(self):
+        return "Doing " + self.name + " at " + self.location
+
