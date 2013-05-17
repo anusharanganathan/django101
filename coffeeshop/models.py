@@ -10,3 +10,5 @@ class Activity(models.Model):
     def __unicode__(self):
         return "Doing " + self.name + " at " + self.location
 
+    class Meta:
+        verbose_name_plural = "activities"
