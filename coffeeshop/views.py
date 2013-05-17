@@ -12,7 +12,7 @@ def inducks(request):
     result = HttpResponse(t.render(filler))
     return result
 
-def general(request):
+def general(request, pagename=None):
     t = loader.get_template('generic.htplus')
 
     import time
@@ -20,7 +20,17 @@ def general(request):
     english = time.strftime("%H:%M", time.gmtime())
     italy = "That was a really <i>expensive</i> ice cream"
 
-    dynamic_bits = Context({'unixtime':now, 'mytime':english, "italy":italy})
+    #askedfor = ''
+    #if pagename != None:
+    #    askedfor = "You asked for " + pagename
+
+    try:
+        askedfor = "You asked for " + pagename
+    except:
+        askedfor = "Go Shopping"
+
+
+    dynamic_bits = Context({'unixtime':now, 'mytime':english, "italy":italy, "askedfor":askedfor})
     myhtml = t.render(dynamic_bits)
     return HttpResponse(myhtml)
 
