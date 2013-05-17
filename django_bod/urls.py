@@ -17,5 +17,5 @@ urlpatterns = patterns('',
     url(r'^brand/index\.htm', 'coffeeshop.views.index'),
     url(r'^brand/inducks\.htm', 'coffeeshop.views.inducks'),
     url(r'^saturday/', 'coffeeshop.views.general'),
-    url(r'^sunday/(?P<pagename>\w+)\.htm', 'coffeeshop.views.general'),
+    url(r'^sunday/(?P<pagename>\w+)\.html?$', 'coffeeshop.views.general'),
 )
