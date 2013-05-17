@@ -20,17 +20,21 @@ def general(request, pagename=None):
     english = time.strftime("%H:%M", time.gmtime())
     italy = "That was a really <i>expensive</i> ice cream"
 
+    gift = 10000.0
+    nn = 17
+    pressie = []
+    for infavour in range(1,nn+1):
+        pressie.append("{0:.2f}".format(gift/infavour))
+    
     #askedfor = ''
     #if pagename != None:
     #    askedfor = "You asked for " + pagename
-
     try:
         askedfor = "You asked for " + pagename
     except:
         askedfor = "Go Shopping"
 
-
-    dynamic_bits = Context({'unixtime':now, 'mytime':english, "italy":italy, "askedfor":askedfor})
+    dynamic_bits = Context({'unixtime':now, 'mytime':english, "italy":italy, "askedfor":askedfor, "tabby":pressie})
     myhtml = t.render(dynamic_bits)
     return HttpResponse(myhtml)
 
