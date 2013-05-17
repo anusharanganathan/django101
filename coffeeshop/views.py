@@ -2,6 +2,9 @@
 from django.http import HttpResponse
 from django.template import loader, Context
 from coffeeshop.models import Activity
+from django.core.context_processors import csrf
+from django import forms
+from django.shortcuts import render_to_response
 
 def index(request):
     result = HttpResponse("Greetings Osney One")
@@ -52,3 +55,29 @@ def general(request, pagename=None):
     myhtml = t.render(dynamic_bits)
     return HttpResponse(myhtml)
 
+class MyForm(forms.Form):
+    name = forms.CharField(max_length=50)
+    location = forms.CharField(max_length=50)
+    duration = forms.IntegerField()
+    description = forms.CharField(widget=forms.TextInput)
+    #description = forms.CharField(max_length=200)
+
+def addform(request):
+    havesubmission = "Blank form"
+    stufftosave = ""
+    if request.method == 'POST':
+      form = MyForm(request.POST)
+      if form.is_valid():
+        havesubmission = "We HAVE got data to store"
+        stufftosave = "Saving ... " + form.cleaned_data['name']
+        stufftosave += ": " + str(form.cleaned_data['location'])
+        stufftosave += ": " + str(form.cleaned_data['duration'])
+        stufftosave += ": " + str(form.cleaned_data['description'])
+        form = MyForm()
+      else:
+        havesubmission = "Data Invalid - please correct"
+    else:
+      form = MyForm()
+    mycontext = {'formholder': form, 'status': havesubmission, 'saving': stufftosave}
+    mycontext.update(csrf(request))
+    return render_to_response('formdemo.html',mycontext) 

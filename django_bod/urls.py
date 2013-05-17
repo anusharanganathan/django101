@@ -21,4 +21,5 @@ urlpatterns = patterns('',
     url(r'^saturday/', 'coffeeshop.views.general'),
     #url(r'^sunday/(?P<pagename>\w+)\.html?$', 'coffeeshop.views.general'),
     url(r'^sunday/(?P<pagename>.+?)\.html?$', 'coffeeshop.views.general'),
+    url(r'^activity/add\.html?$', 'coffeeshop.views.addform'),
 )

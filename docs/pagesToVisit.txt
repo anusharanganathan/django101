@@ -5,3 +5,4 @@ http://localhost:8000/brand/index.htm
 http://localhost:8000/brand/inducks.html
 http://localhost:8000/saturday/whatever
 http://localhost:8000/sunday/France.html
+http://localhost:8000/activity/add.html

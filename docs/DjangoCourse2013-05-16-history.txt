@@ -29,7 +29,7 @@ Add a model to coffeeshop/models.py
 python manage.py sql coffeeshop # have a look at the sql generated
 python manage.py syncdb 
 
-#If you have modified your model, use south
+#if you have modified your model, use south
 
 python manage.py shell
 >>> from coffeeshop.models import Activity
@@ -47,9 +47,9 @@ python manage.py shell
 [<Activity: Activity object>, <Activity: Activity object>]
 >>> 
 
+# After enabling admin in Django, need to run syncdb again
 
-
-
-
+# Forms in Django
+http://www.wellho.net/mouth/3639_Demonstration-of-a-form-using-Django.html
 
 

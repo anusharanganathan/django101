@@ -1,0 +1,16 @@
+  <html>
+  <head>
+  <title>This is a form demo</title>
+  </head>
+  <body bgcolor=#CCBBAA>
+  <h1>Form Demo</h1>
+  <b>{{ status }}</b><br /><br />
+  <form method="POST">
+  {% csrf_token %}
+  {{ formholder.as_p }}
+  <input type="submit" value="Submit" />
+  </form>
+  <hr />
+  {{ saving }}
+  </body>
+  </html>
