@@ -16,12 +16,21 @@
 {% endfor %}
 </ul>
 
-<h2>Activities</h2>
+{% if selected %}
+<h2>Activities selected</h2>
+<ul>
+{% for act in selected %}
+<li>{{act}}</li>
+{% endfor %}
+</ul>
+{% else %}
+<h2>Activities available</h2>
 <ul>
 {% for act in acts %}
 <li>{{act}}</li>
 {% endfor %}
 </ul>
+{% endif %}
 
 </body>
 </html>

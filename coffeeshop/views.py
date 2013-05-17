@@ -28,21 +28,27 @@ def general(request, pagename=None):
     for infavour in range(1,nn+1):
         pressie.append("{0:.2f}".format(gift/infavour))
     
-    #Content from the model
-    acts = []
-    for choice in Activity.objects.all():
-        #acts.append(choice.name)
-        acts.append(choice)
-
     #askedfor = ''
     #if pagename != None:
     #    askedfor = "You asked for " + pagename
     try:
         askedfor = "You asked for " + pagename
+        specific = 1
     except:
         askedfor = "Go Shopping"
+        specific = 0
 
-    dynamic_bits = Context({'unixtime':now, 'mytime':english, "italy":italy, "askedfor":askedfor, "tabby":pressie, "acts":acts})
+    #Content from the model
+    acts = []
+    for choice in Activity.objects.all():
+        #acts.append(choice.name)
+        acts.append(choice)
+    selected = []
+    if specific:
+        for choice in Activity.objects.filter(name=pagename):
+            selected.append(choice)
+
+    dynamic_bits = Context({'unixtime':now, 'mytime':english, "italy":italy, "askedfor":askedfor, "tabby":pressie, "acts":acts, "selected":selected})
     myhtml = t.render(dynamic_bits)
     return HttpResponse(myhtml)
 

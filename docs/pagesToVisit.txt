@@ -1,0 +1,7 @@
+Pages to visit in the browser, to test the different bits
+
+
+http://localhost:8000/brand/index.htm
+http://localhost:8000/brand/inducks.html
+http://localhost:8000/saturday/whatever
+http://localhost:8000/sunday/France.html
