@@ -55,5 +55,6 @@ http://www.wellho.net/mouth/3639_Demonstration-of-a-form-using-Django.html
 # Nesting of templates
 http://www.wellho.net/mouth/3633_Nesting-Templates-in-Django.html
 
-
+# Sessions in Django
+http://www.wellho.net/mouth/3640_Sessions-Shopping-Carts-in-Django-the-Python-Web-Framework.html
 
