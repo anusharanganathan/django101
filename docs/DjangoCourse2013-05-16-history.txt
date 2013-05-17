@@ -52,4 +52,8 @@ python manage.py shell
 # Forms in Django
 http://www.wellho.net/mouth/3639_Demonstration-of-a-form-using-Django.html
 
+# Nesting of templates
+http://www.wellho.net/mouth/3633_Nesting-Templates-in-Django.html
+
+
 
