@@ -12,3 +12,15 @@ def inducks(request):
     result = HttpResponse(t.render(filler))
     return result
 
+def general(request):
+    t = loader.get_template('generic.htplus')
+
+    import time
+    now = time.time()
+    english = time.strftime("%H:%M", time.gmtime())
+    italy = "That was a really <i>expensive</i> ice cream"
+
+    dynamic_bits = Context({'unixtime':now, 'mytime':english, "italy":italy})
+    myhtml = t.render(dynamic_bits)
+    return HttpResponse(myhtml)
+

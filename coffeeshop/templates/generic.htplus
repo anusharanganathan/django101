@@ -1,0 +1,9 @@
+<html>
+<body>
+<h1>path: coffeeshop -> general</h1>
+<p>The linux time is : {{ unixtime }}</p>
+<p>The time is : {{ mytime }} in 24 hour clock </p>
+<h2>Italy notes</h2>
+<p>{{ italy | safe }}</p>
+</body>
+</html>

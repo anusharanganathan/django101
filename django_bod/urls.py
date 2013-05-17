@@ -16,5 +16,5 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^brand/index\.htm', 'coffeeshop.views.index'),
     url(r'^brand/inducks\.htm', 'coffeeshop.views.inducks'),
-    url(r'^saturday/', 'weekend.views.general'), #anything following saturday
+    url(r'^saturday/', 'coffeeshop.views.general'),
 )
