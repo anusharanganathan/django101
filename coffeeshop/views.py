@@ -59,7 +59,7 @@ class MyForm(forms.Form):
     name = forms.CharField(max_length=50)
     location = forms.CharField(max_length=50)
     duration = forms.IntegerField()
-    description = forms.CharField(widget=forms.TextInput)
+    description = forms.CharField(widget=forms.Textarea)
     #description = forms.CharField(max_length=200)
 
 def addform(request):
